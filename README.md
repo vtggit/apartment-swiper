@@ -2,6 +2,14 @@
 
 A mobile-friendly web application that allows users to swipe through apartment listings, similar to dating apps. Users can like or dislike apartments, view details, and filter listings based on preferences.
 
+## Mobile App Features
+
+- **Swipe Interface**: Swipe right to like, left to dislike apartments
+- **Image Gallery**: Browse multiple images for each apartment
+- **Detailed View**: See comprehensive apartment information
+- **Filtering System**: Find apartments that match your criteria
+- **Favorites List**: Keep track of apartments you're interested in
+
 ## Features
 
 - Swipe interface for apartment browsing (left for dislike, right for like)
