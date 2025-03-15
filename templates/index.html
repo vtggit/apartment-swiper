@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ApartmentSwiper</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>ApartmentSwiper</h1>
+            <nav>
+                <button id="home-btn" class="active"><i class="fas fa-home"></i></button>
+                <button id="favorites-btn"><i class="fas fa-heart"></i></button>
+                <button id="filters-btn"><i class="fas fa-sliders-h"></i></button>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Swipe View -->
+            <div id="swipe-view" class="view active">
+                <div class="card-container">
+                    <div class="no-more-cards hidden">
+                        <h2>No more apartments to show</h2>
+                        <p>Adjust your filters or check your favorites!</p>
+                    </div>
+                    <!-- Cards will be added here dynamically -->
+                </div>
+                <div class="swipe-actions">
+                    <button id="dislike-btn" class="action-btn dislike"><i class="fas fa-times"></i></button>
+                    <button id="like-btn" class="action-btn like"><i class="fas fa-heart"></i></button>
+                </div>
+            </div>
+
+            <!-- Favorites View -->
+            <div id="favorites-view" class="view">
+                <h2>Your Favorites</h2>
+                <div class="favorites-container">
+                    <!-- Favorites will be added here dynamically -->
+                    <div class="no-favorites hidden">
+                        <p>You haven't liked any apartments yet.</p>
+                        <p>Start swiping to find your perfect home!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filters View -->
+            <div id="filters-view" class="view">
+                <h2>Filters</h2>
+                <form id="filters-form">
+                    <div class="filter-group">
+                        <label for="price-range">Price Range:</label>
+                        <div class="range-inputs">
+                            <input type="number" id="min-price" placeholder="Min" min="0">
+                            <span>to</span>
+                            <input type="number" id="max-price" placeholder="Max" min="0">
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label>Bedrooms:</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="bedrooms" value="0"> Studio</label>
+                            <label><input type="checkbox" name="bedrooms" value="1"> 1 BR</label>
+                            <label><input type="checkbox" name="bedrooms" value="2"> 2 BR</label>
+                            <label><input type="checkbox" name="bedrooms" value="3+"> 3+ BR</label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="amenities">Amenities:</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="amenities" value="In-unit Laundry"> In-unit Laundry</label>
+                            <label><input type="checkbox" name="amenities" value="Dishwasher"> Dishwasher</label>
+                            <label><input type="checkbox" name="amenities" value="Gym"> Gym</label>
+                            <label><input type="checkbox" name="amenities" value="Pool"> Pool</label>
+                            <label><input type="checkbox" name="amenities" value="Parking"> Parking</label>
+                            <label><input type="checkbox" name="amenities" value="Pets Allowed"> Pets Allowed</label>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="apply-filters-btn">Apply Filters</button>
+                    <button type="button" class="reset-filters-btn">Reset Filters</button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <!-- Apartment Detail Modal -->
+    <div id="apartment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <!-- Apartment details will be added here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
